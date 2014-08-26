@@ -14,7 +14,7 @@ class Comfy::Admin::Blog::PostsController < Comfy::Admin::Blog::BaseController
   end
 
   def create
-    @post.save!
+    @post = Post.create!(post_params)
     flash[:success] = 'Blog Post created'
     redirect_to :action => :edit, :id => @post
 
@@ -58,7 +58,7 @@ protected
   end
   
   def post_params
-    params.fetch(:post, {}).permit!
+    params.permit(:image).fetch(:post, {}).permit!
   end
 
 end
