@@ -9,6 +9,7 @@ class Comfy::Blog::Post < ActiveRecord::Base
     :dependent => :destroy
   
   has_attached_file :image, :styles => { :small => "300x300>" }
+  attr_accessor :image
 
   # -- Validations ----------------------------------------------------------
   validates :blog_id, :title, :slug, :year, :month, :content,
