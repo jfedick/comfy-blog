@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gemspec
 
 gem 'comfortable_mexican_sofa', :github => 'comfy/comfortable-mexican-sofa'
+gem "paperclip", "~> 4.1"
 
 group :development do
   gem 'awesome_print'

@@ -7,6 +7,8 @@
     = post.author
   .date
     = post.published_at.to_s(:db)
+  .image
+    = image_tag post.image.url(:medium)
   .content
     = post.content.html_safe
   
