@@ -16,9 +16,8 @@ class Comfy::Blog::Post < ActiveRecord::Base
     :format     => { :with => /\A\w[a-z0-9_-]*\z/i }
   
   # -- paperclip for images with posts --------------------------------------
-  
+
   has_attached_file :image, :styles => { :small => "300x300>" }
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   # -- Scopes ---------------------------------------------------------------
   default_scope -> {
